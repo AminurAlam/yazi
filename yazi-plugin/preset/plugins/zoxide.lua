@@ -41,6 +41,10 @@ local function opts()
 		end
 	end
 
+	if os.getenv("FZF_DEFAULT_OPTS_FILE") then
+		return ""
+	end
+
 	return (os.getenv("FZF_DEFAULT_OPTS") or "")
 		.. " "
 		.. table.concat(default, " ")
